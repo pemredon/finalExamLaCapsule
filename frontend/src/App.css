@@ -1,0 +1,108 @@
+
+.cover {
+    align-items: center;
+}
+.App {
+    text-align: center;
+  }
+  
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+    height: 40vmin;
+    pointer-events: none;
+  }
+  
+  .App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+  
+  .App-link {
+    color: #61dafb;
+  }
+  .navbar{
+    box-shadow: 10px 5px 5px rgba(0,0,0,0.1);
+  }
+  .navbar-brand{
+    color: #EC7168 !important;
+    font-weight: 800;
+    letter-spacing: 1px;
+    font-size: 24px !important;
+  }
+  .bg{
+    height: 1000px;
+    width: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+  .jumbotron {
+    padding: 0 !important;
+  }
+  .relative{
+    position: relative;
+    width: 1000px;
+  }
+  .overlay-text{
+    position: absolute;
+    top: 25%;
+    width: 100%;
+    color: #FFF;
+    height: 75%;
+  }
+  .display-perso{
+    font-size: 70px;
+    font-weight: 800;
+    letter-spacing: 1px;
+  }
+  .titleCard{
+    font-size: 18px;
+    font-weight: 700
+  }
+  .img-card{
+    height: 200px;
+    object-fit: contain;
+    background: #EC7168;
+    padding: 50px;
+  }
+  .full-width{
+    width: 100%;
+  }
+  /* MARGIN ET PADDING + ALIGN */
+  .align{
+    text-align: center
+  }
+  .ma-thin{
+    margin: 5px;
+  }
+  .mb{
+    margin-bottom: 15px
+  }
+  .mb-large{
+    margin-bottom: 25px
+  }
+  .card-body{
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+  .card{
+    height: 650px !important;
+  
+  }
+  /* FIN */
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  

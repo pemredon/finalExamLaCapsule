@@ -9,6 +9,8 @@ import {
   Nav,
   NavItem,
   NavLink,
+  Jumbotron,
+  Button,
    } from 'reactstrap';
 
 import { 
@@ -145,9 +147,15 @@ class App extends Component {
               </Nav>
             </Collapse>
           </Navbar>
-        <Row >
-          <Image src="https://greatives.eu/themes/osmosis/wp-content/uploads/2014/10/handsome-hipster-modern-man-designer-working-home-using-laptop-at-home.jpg" fluid style={imgBackground}/>
-        </Row>
+          <Jumbotron fluid className="relative">
+            <img className='cover' src="https://img.bfmtv.com/c/630/420/c4d/3f9935a15b3f95527e7282abf58e0.jpg"/>
+            <div className="overlay-text">
+                <h1 className="display-perso">My Tech World</h1>
+                <p className="lead mb-large">10 weeks to change my life</p>
+                <p className="lead">8 Fullstack projects to learn how to code</p>
+                <Button color="secondary">Discover my projects</Button>
+            </div>  
+          </Jumbotron>
 
         </div>
         <Container>
@@ -155,7 +163,7 @@ class App extends Component {
               {projectList}
           </Row>
         </Container>
-
+        <p className='align'>Created after 10 weeks Bootcamp @La capsule academy</p>
       </div>
       // </Provider>
 
