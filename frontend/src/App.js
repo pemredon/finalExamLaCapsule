@@ -46,9 +46,9 @@ class App extends Component {
       isOpen: false,
       viewOnlyLike: false,
       projectCount: 0,
-      projectNameList: [],
       project: [],
       projectLiked: [],
+
     };
   }
   toggle() {
@@ -71,27 +71,20 @@ class App extends Component {
     })
   }
 
-  handleClick(isLike, name) {
-    // 1) First of all, we want to realize a copy of our state because it is an Array and we do not want to create a simple reference (for arrays and objects) but a real copy.
-    var projectNameListCopy = [...this.state.projectNameList];
-
-    // 2) If the project is liked :
+  handleClick(isLike) {
+   
     if (isLike) {
-      // 2.1) We want to push this specific project and increment this.state.projectsCout
-      projectNameListCopy.push(name);
+      // 2.1) We want to show this specific project and increment this.state.projectsCount
       this.setState({
+        
         projectCount: this.state.projectCount+1,
-        projectNameList: projectNameListCopy,
       })
     }
     // 3) If the project is disliked :
     else {
-      // 3.1) We want to target this specific project, and then splice it
-      var index = projectNameListCopy.indexOf(name)
-      projectNameListCopy.splice(index, 1);
+      // 3.1) We want to target this specific project, and then display it
       this.setState({
         projectCount: this.state.projectCount-1,
-        projectNameList: projectNameListCopy,
       })
     }
     console.log("Nombre de projets selectionner===>", this.setState.projectCount)
@@ -101,12 +94,13 @@ class App extends Component {
   
   render() {
     
-    var shopBackground = {
-      height: "200px",
-      width: "100%",
+    var imgBackground = {
+      position: "inerit",
+      height: "500px",
       marginBottom: "30px",
       backgroundSize: "cover",
-      backgroundPosition: "center"
+      backgroundPosition: "center top",
+      width: "100%"
     }
 
     const projectData = [
@@ -136,8 +130,8 @@ class App extends Component {
       // <Provider store={store}>
 
       <div>
-          <div>
-          <Navbar color="light" light expand="md">
+          <div >
+          <Navbar color="light" light expand="md" style={{position:'fixed', width: "100%", zIndex: 1}}>
             <NavbarBrand href="/">My Tech World</NavbarBrand>
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
@@ -151,8 +145,11 @@ class App extends Component {
               </Nav>
             </Collapse>
           </Navbar>
+        <Row >
+          <Image src="https://greatives.eu/themes/osmosis/wp-content/uploads/2014/10/handsome-hipster-modern-man-designer-working-home-using-laptop-at-home.jpg" fluid style={imgBackground}/>
+        </Row>
+
         </div>
-        <Image src="https://image.redbull.com/rbcom/010/2016-06-08/1331799129745_1/0100/0/1/that-long-hot-road.jpg" fluid style={shopBackground}/>;
         <Container>
           <Row>
               {projectList}
