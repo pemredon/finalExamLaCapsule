@@ -1,43 +1,50 @@
 import React, { Component } from 'react';
-import { Card, Button, CardImg, CardTitle, CardText, CardDeck,
-  CardSubtitle, CardBody } from 'reactstrap';
+import { Card, Button, CardImg, CardTitle, CardText,
+  CardSubtitle, CardBody, Progress } from 'reactstrap';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default class Project extends Component {
 
     render(){
 
+     var projectImg = {
+      content: "\f087", 
+      fontFamily: "FontAwesome",
+      fontStyle: "normal",
+      fontWeight: "normal",
+      textDecoration: "inherit",
+      position: "absolute",
+      fontSize: "200px",
+      color: "white",
+      // top: "50%",
+      left: "40%",
+      // margin: "-300px 0 0 -200px",
+      // zIndex: "1",
+     }
+
+     var styleImg = {
+      backgroundColor: "pink",
+      padding: "100px"
+     }
+
 
     return (
-      <CardDeck>
       <Card>
-        <CardImg top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=256%C3%97180&w=256&h=180" alt="Card image cap" />
+        <CardImg top width="100%" style={styleImg} />
+        <FontAwesomeIcon size="2x" style={projectImg} icon={this.props.projectIcon} />
         <CardBody>
-          <CardTitle>Card title</CardTitle>
-          <CardSubtitle>Card subtitle</CardSubtitle>
-          <CardText>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</CardText>
-          <Button>Button</Button>
+          <CardTitle>{this.props.projectName}</CardTitle>
+          <CardSubtitle>{this.props.projectDesc}</CardSubtitle>
+          <CardText>Stack Front</CardText>
+          <CardText>Stack Back</CardText>
+          <Progress value={80}>4/5</Progress>
+          <Button>Favorite</Button>
         </CardBody>
       </Card>
-      <Card>
-        <CardImg top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=256%C3%97180&w=256&h=180" alt="Card image cap" />
-        <CardBody>
-          <CardTitle>Card title</CardTitle>
-          <CardSubtitle>Card subtitle</CardSubtitle>
-          <CardText>This card has supporting text below as a natural lead-in to additional content.</CardText>
-          <Button>Button</Button>
-        </CardBody>
-      </Card>
-      <Card>
-        <CardImg top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=256%C3%97180&w=256&h=180" alt="Card image cap" />
-        <CardBody>
-          <CardTitle>Card title</CardTitle>
-          <CardSubtitle>Card subtitle</CardSubtitle>
-          <CardText>This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</CardText>
-          <Button>Button</Button>
-        </CardBody>
-      </Card>
-    </CardDeck>
+      
         );
     }
 }
